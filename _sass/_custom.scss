@@ -29,12 +29,30 @@
 
   /* Tunable layout dimensions. These are the knobs the drag-tuner adjusts;
      whatever values you settle on get pasted back in here. */
-  --content-w:  58.5em;    /* prose column cap (in em => fixes line length) */
-  --body-size:  1.29em;   /* base size for page content */
-  --line-h:     1.9;     /* body leading */
-  --side-w:     34%;     /* left column as a share of the hero, so proportions hold at any width */
-  --sec-gap:    0.8em;   /* space above each section heading */
-  --gap:        1.8em;   /* space between the hero's two columns */
+  --content-w:  84em;      /* prose column cap (in em => fixes line length) */
+  --body-size:  0.97em;   /* base size for page content */
+  --line-h:     1.22;     /* body leading */
+  --side-w:     22.9%;     /* left column as a share of the hero, so proportions hold at any width */
+  --sec-gap:    2.6em;    /* space above each section heading */
+  --gap:        2.6em;   /* space between the hero's two columns */
+
+  /* every distance below is a slider in the preview tuner */
+  --para-gap:    1em;     /* between body paragraphs */
+  --list-line-h: 1.15;    /* leading inside list items */
+  --list-gap:    0.36em;   /* between dated-list items */
+  --list-indent: 1.5em;   /* dated-list indent (marker sits on it) */
+  --head-gap:    0.28em;   /* below a section heading */
+  --hero-pad:    0.9em;    /* hero bottom padding */
+  --hero-mb:     1.05em;  /* below the hero rule */
+  --photo-gap:   0.6em;    /* above/below the photo */
+  --bio-top:     3.9em;   /* how far the bio starts down */
+  --bio-para:    2.25em;    /* between bio paragraphs */
+  --label-gap:   1.6em;   /* above a theme label */
+  --entry-gap:   1.1em;   /* between project entries */
+  --entry-pad:   0.7em;    /* above a project title, under its rule */
+  --bullet-gap:  0.08em;   /* between project bullets */
+  --bullet-ind:  1.1em;   /* project bullet indent */
+  --title-gap:   0.6em;    /* project title -> its first bullet */
 }
 
 html { scroll-behavior: smooth; }
@@ -64,7 +82,7 @@ body {
   max-width: var(--content-w);
 }
 
-.page__content p { margin: 0 0 1em; }
+.page__content p { margin: 0 0 var(--para-gap); }
 
 /* bold in the intro reads as emphasis, in the darker heading ink */
 .page__content p strong { font-weight: 600; color: var(--ink); }
@@ -103,8 +121,8 @@ body {
   align-items: flex-start;
   gap: var(--gap);
   width: 100%;
-  padding: .2em 0 1.3em;
-  margin-bottom: 1.5em;
+  padding: .1em 0 var(--hero-pad);
+  margin-bottom: var(--hero-mb);
   border-bottom: 1px solid var(--line);
 }
 .page__content .hero__side {
@@ -117,14 +135,14 @@ body {
   display: block;
   width: 100%;          /* fills the column, so the left block has one edge */
   height: auto;
-  margin: .85em 0 .8em;
+  margin: var(--photo-gap) 0 var(--photo-gap);
   border-radius: 2px;
   box-shadow: 0 3px 18px rgba(27, 27, 25, .16);
 }
 /* bio sits a little above the photo's top edge — clear of the name, but not
    strictly aligned. Revisit if the name's size changes. */
-.page__content .hero__bio { flex: 1; min-width: 0; padding-top: 3.9em; }
-.page__content .hero__bio p { margin: 0 0 .8em; }
+.page__content .hero__bio { flex: 1; min-width: 0; padding-top: var(--bio-top); }
+.page__content .hero__bio p { margin: 0 0 var(--bio-para); }
 .page__content .hero__bio p:last-child { margin-bottom: 0; }
 .page__content .hero__meta {
   margin: 0;
@@ -135,8 +153,8 @@ body {
 .page__content .hero__meta a { color: var(--ink-mute); }
 .page__content .hero__meta a:hover { color: var(--accent); }
 .page__content .hero__eyebrow {
-  margin: 0 0 .5em;
-  font-size: .72em;
+  margin: 0 0 .35em;
+  font-size: .7em;
   font-weight: 600;
   letter-spacing: .16em;
   text-transform: uppercase;
@@ -159,7 +177,7 @@ body {
 /* closes the bio column, under "Currently I'm curious ..." — smaller than the
    prose it follows so it reads as a coda, not a headline */
 .page__content .hero__q {
-  margin: 1.1em 0 0;
+  margin: .8em 0 0;
   font-style: italic;
   font-size: 1.02em;
   line-height: 1.45;
@@ -187,12 +205,12 @@ body {
 /* --- section headings ---------------------------------------------------- */
 
 .page__content h1 {
-  font-size: 2.45em;
+  font-size: 1.6em;
   font-weight: 500;
   line-height: 1.15;
   letter-spacing: -.02em;
   color: var(--ink);
-  margin: var(--sec-gap) 0 .4em;
+  margin: var(--sec-gap) 0 var(--head-gap);
   padding-bottom: .2em;
   border-bottom: 1px solid var(--line);
 }
@@ -201,20 +219,20 @@ body {
        after them — the blocks below take those back) --------------------- */
 
 .page__content [id="-educations"] ~ ul {
-  margin: .9em 0 0;
-  padding-left: 1.5em;
+  margin: var(--para-gap) 0 0;
+  padding-left: var(--list-indent);
   border-left: 1px solid var(--line);
   list-style: none;
 }
 .page__content [id="-educations"] ~ ul li {
   position: relative;
-  margin: 0 0 .8em;
-  line-height: 1.65;
+  margin: 0 0 var(--list-gap);
+  line-height: var(--list-line-h);
 }
 .page__content [id="-educations"] ~ ul li::before {
   content: "";
   position: absolute;
-  left: -1.5em;
+  left: calc(-1 * var(--list-indent));
   top: .6em;
   width: 5px;
   height: 5px;
@@ -235,7 +253,7 @@ body {
    above each title separates one project from the next. */
 
 .page__content [id="-research-projects"] ~ h2 {
-  margin: 3em 0 1.1em;
+  margin: var(--label-gap) 0 var(--head-gap);
   font-size: .72em;
   font-weight: 600;
   letter-spacing: .16em;
@@ -244,8 +262,8 @@ body {
 }
 
 .page__content [id="-research-projects"] ~ p {
-  margin: 2.2em 0 .1em;
-  padding-top: 1.3em;
+  margin: var(--entry-gap) 0 .1em;
+  padding-top: var(--entry-pad);
   border-top: 1px solid var(--line);
   font-size: .82em;
   line-height: 1.5;
@@ -276,20 +294,20 @@ body {
 }
 
 .page__content [id="-research-projects"] ~ ul {
-  margin: .6em 0 0;
-  padding-left: 1.1em;
+  margin: var(--title-gap) 0 0;
+  padding-left: var(--bullet-ind);
   border-left: 0;
   list-style: none;
 }
 .page__content [id="-research-projects"] ~ ul li {
   position: relative;
-  margin: .25em 0;
-  line-height: 1.6;
+  margin: var(--bullet-gap) 0;
+  line-height: var(--list-line-h);
 }
 .page__content [id="-research-projects"] ~ ul li::before {
   content: "";
   position: absolute;
-  left: -1.1em;
+  left: calc(-1 * var(--bullet-ind));
   top: .72em;
   width: 5px;
   height: 1px;
@@ -312,19 +330,19 @@ body {
 /* --- 3. talks: back to the dated-list treatment --------------------------- */
 
 .page__content [id="-talks-and-seminars"] ~ ul {
-  margin: .9em 0 0;
-  padding-left: 1.5em;
+  margin: var(--para-gap) 0 0;
+  padding-left: var(--list-indent);
   border-left: 1px solid var(--line);
 }
 .page__content [id="-talks-and-seminars"] ~ ul li {
-  margin: 0 0 .8em;
-  line-height: 1.65;
+  margin: 0 0 var(--list-gap);
+  line-height: var(--list-line-h);
 }
 .page__content [id="-talks-and-seminars"] ~ ul li::before {
   width: 5px;
   height: 5px;
   top: .6em;
-  left: -1.5em;
+  left: calc(-1 * var(--list-indent));
   border-radius: 50%;
   background: var(--accent);
   transform: translateX(-50%);
