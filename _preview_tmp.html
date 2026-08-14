@@ -1,0 +1,957 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+<base href="https://bci-plumber.github.io/">
+
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+
+
+<title>Xinyu (Catherine) Tian - Homepage</title>
+
+
+
+
+
+
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Xinyu (Catherine) Tian">
+<meta property="og:title" content="Xinyu (Catherine) Tian">
+
+
+  <link rel="canonical" href="https://bci-plumber.github.io/">
+  <meta property="og:url" content="https://bci-plumber.github.io/">
+
+
+
+  <meta property="og:description" content="Homepage of Xinyu (Catherine) Tian — senior undergraduate at Tsinghua University, visiting student at UC San Diego. Human data for embodied intelligence and robot learning.">
+
+
+
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+<head>
+  <base target="_blank">
+<style>
+/* ==========================================================================
+   Custom look & feel — quiet, typographic, near-monochrome.
+   Strong size contrast between levels, tight vertical rhythm, one accent
+   colour used sparingly. Structure is carried by whitespace and hairlines
+   rather than boxes or colour.
+
+   ORDER-SENSITIVE. Section styling is scoped with `[id="x"] ~ el`, which
+   matches every matching element *after* heading x — so each block below
+   re-styles the tail of the page and later blocks win. They are written to
+   match the page order in _pages/about.md:
+
+       About → Educations → Internships → Research Projects → Talks
+
+   1. dated-list block   paints Educations onward (i.e. everything)
+   2. research block     repaints Research Projects onward
+   3. talks block        restores the dated-list look for the last section
+
+   Reordering the sections in about.md, or renaming a heading, breaks this.
+   The ids come from kramdown ("# 🔬 Research Projects" -> "-research-projects").
+   ========================================================================== */
+
+:root {
+  --ink:      #1b1b19;   /* headings, project titles */
+  --ink-body: #3c3c39;   /* body copy */
+  --ink-mute: #86847e;   /* meta, dates, captions */
+  --line:     #e6e3dd;   /* hairlines */
+  --paper:    #fcfbf9;   /* page background */
+  --accent:   #3f5f7f;   /* used sparingly: links, small marks */
+
+  /* Tunable layout dimensions. These are the knobs the drag-tuner adjusts;
+     whatever values you settle on get pasted back in here. */
+  --content-w:  58.5em;    /* prose column cap (in em => fixes line length) */
+  --body-size:  1.29em;   /* base size for page content */
+  --line-h:     1.9;     /* body leading */
+  --side-w:     19.8em;  /* left column: also the photo's width; fits the name on one line */
+  --sec-gap:    0.8em;   /* space above each section heading */
+  --gap:        1.8em;   /* space between the hero's two columns */
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  /* no font-family here: inherit the theme's own stack ($sans-serif,
+     "Trebuchet MS", Helvetica, sans-serif) */
+  background: var(--paper);
+  color: var(--ink-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection { background: rgba(63, 95, 127, .14); }
+
+/* --- body copy ----------------------------------------------------------- */
+
+/* Sized for a desktop screen. The cap is in `em`, so it fixes the line at
+   ~88 characters; the page grows by scaling type up rather than by running
+   lines longer, which is what actually hurts readability. */
+.page__content {
+  /* Times has a smaller x-height than a UI sans, so it needs a size bump to
+     read the same at a given pixel size */
+  font-size: var(--body-size);
+  line-height: var(--line-h);
+  color: var(--ink-body);
+  max-width: var(--content-w);
+}
+
+.page__content p { margin: 0 0 1em; }
+
+/* bold in the intro reads as emphasis, in the darker heading ink */
+.page__content p strong { font-weight: 600; color: var(--ink); }
+
+.page__content a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  text-decoration-color: rgba(63, 95, 127, .3);
+  transition: text-decoration-color .15s ease;
+}
+.page__content a:hover { text-decoration-color: var(--accent); }
+
+/* --- hero -----------------------------------------------------------------
+   The first screen: name first, almost no prose. Markup lives at the top of
+   _pages/about.md as a plain <div class="hero">. */
+
+/* No sidebar (author_profile: false), so reclaim the column the theme
+   reserves for it: .page is a susy 10-of-12 span floated last. */
+#main .page {
+  float: none;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+/* the theme floats .page__content (susy `full()`); a float cannot be centred
+   by auto margins, so unset it first */
+#main .page__content { float: none; margin-left: auto; margin-right: auto; }
+
+/* The hero spans exactly the content column — no breakout. */
+.page__content .hero {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap);
+  width: 100%;
+  padding: .2em 0 1.3em;
+  margin-bottom: 1.5em;
+  border-bottom: 1px solid var(--line);
+}
+.page__content .hero__side {
+  flex: none;
+  width: var(--side-w);
+}
+/* square, as the photograph is — no circular mask */
+.page__content .hero__portrait {
+  display: block;
+  width: 100%;          /* fills the column, so the left block has one edge */
+  height: auto;
+  margin: .85em 0 .8em;
+  border-radius: 2px;
+  box-shadow: 0 3px 18px rgba(27, 27, 25, .16);
+}
+/* bio sits a little above the photo's top edge — clear of the name, but not
+   strictly aligned. Revisit if the name's size changes. */
+.page__content .hero__bio { flex: 1; min-width: 0; padding-top: 3.9em; }
+.page__content .hero__bio p { margin: 0 0 .8em; }
+.page__content .hero__bio p:last-child { margin-bottom: 0; }
+.page__content .hero__meta {
+  margin: 0;
+  font-size: .85em;
+  line-height: 1.6;
+  color: var(--ink-mute);
+}
+.page__content .hero__meta a { color: var(--ink-mute); }
+.page__content .hero__meta a:hover { color: var(--accent); }
+.page__content .hero__eyebrow {
+  margin: 0 0 .5em;
+  font-size: .72em;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+/* sized so "Xinyu (Catherine) Tian" stays on one line in this column */
+.page__content .hero .hero__name {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 1.9em;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -.01em;
+  white-space: nowrap;
+  color: var(--ink);
+}
+/* closes the bio column, under "Currently I'm curious ..." — smaller than the
+   prose it follows so it reads as a coda, not a headline */
+.page__content .hero__q {
+  margin: 1.1em 0 0;
+  font-style: italic;
+  font-size: 1.02em;
+  line-height: 1.45;
+  color: var(--ink-body);
+}
+
+@media (max-width: 820px) {
+  .page__content .hero {
+    display: block;
+    width: auto;
+    margin-left: 0;
+    transform: none;
+  }
+  .page__content .hero__side { width: auto; max-width: 24em; }
+  .page__content .hero__bio { margin-top: 1.8em; }
+  .page__content .hero .hero__name { font-size: 1.9em; white-space: normal; }
+}
+
+/* --- masthead nav: keep every section visible instead of collapsing ------- */
+
+.masthead .greedy-nav { background: transparent; min-width: 0; }
+.masthead .greedy-nav a { margin: 0 .62rem; font-size: .95em; }
+.masthead .masthead__menu-item--lg { padding-right: .9em; }
+
+/* --- section headings ---------------------------------------------------- */
+
+.page__content h1 {
+  font-size: 2.45em;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -.02em;
+  color: var(--ink);
+  margin: var(--sec-gap) 0 .4em;
+  padding-bottom: .2em;
+  border-bottom: 1px solid var(--line);
+}
+
+/* --- 1. dated lists: educations, internships, (and, for now, everything
+       after them — the blocks below take those back) --------------------- */
+
+.page__content [id="-educations"] ~ ul {
+  margin: .9em 0 0;
+  padding-left: 1.5em;
+  border-left: 1px solid var(--line);
+  list-style: none;
+}
+.page__content [id="-educations"] ~ ul li {
+  position: relative;
+  margin: 0 0 .8em;
+  line-height: 1.65;
+}
+.page__content [id="-educations"] ~ ul li::before {
+  content: "";
+  position: absolute;
+  left: -1.5em;
+  top: .6em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  transform: translateX(-50%);
+  opacity: .75;
+}
+/* the leading date only, not italics later in the line (e.g. paper titles) */
+.page__content [id="-educations"] ~ ul li > em:first-child {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* --- 2. research projects ------------------------------------------------
+   Each project is a <p> title line followed by a <ul>. No boxes: a hairline
+   above each title separates one project from the next. */
+
+.page__content [id="-research-projects"] ~ h2 {
+  margin: 3em 0 1.1em;
+  font-size: .72em;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+.page__content [id="-research-projects"] ~ p {
+  margin: 2.2em 0 .1em;
+  padding-top: 1.3em;
+  border-top: 1px solid var(--line);
+  font-size: .82em;
+  line-height: 1.5;
+  color: var(--ink-mute);
+}
+.page__content [id="-research-projects"] ~ h2 + p {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+/* kept inline: the markdown reads "**Title** · Affiliation, date", so a
+   block title would strand the separator at the head of the meta line */
+.page__content [id="-research-projects"] ~ p strong {
+  font-size: 1.7em;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -.015em;
+  color: var(--ink);
+}
+/* a link inside a title stays part of the title, not an accent-coloured word */
+.page__content [id="-research-projects"] ~ p strong a {
+  color: inherit;
+  text-decoration-color: rgba(63, 95, 127, .45);
+}
+.page__content [id="-research-projects"] ~ p em {
+  font-size: 1em;
+  color: var(--ink-mute);
+}
+
+.page__content [id="-research-projects"] ~ ul {
+  margin: .6em 0 0;
+  padding-left: 1.1em;
+  border-left: 0;
+  list-style: none;
+}
+.page__content [id="-research-projects"] ~ ul li {
+  position: relative;
+  margin: .25em 0;
+  line-height: 1.6;
+}
+.page__content [id="-research-projects"] ~ ul li::before {
+  content: "";
+  position: absolute;
+  left: -1.1em;
+  top: .72em;
+  width: 5px;
+  height: 1px;
+  border-radius: 0;
+  background: var(--ink-mute);
+  transform: none;
+  opacity: .7;
+}
+.page__content [id="-research-projects"] ~ ul li strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+/* italics inside project bullets are ordinary emphasis, not dates */
+.page__content [id="-research-projects"] ~ ul li > em:first-child {
+  font-style: italic;
+  font-weight: 400;
+  color: inherit;
+}
+
+/* --- 3. talks: back to the dated-list treatment --------------------------- */
+
+.page__content [id="-talks-and-seminars"] ~ ul {
+  margin: .9em 0 0;
+  padding-left: 1.5em;
+  border-left: 1px solid var(--line);
+}
+.page__content [id="-talks-and-seminars"] ~ ul li {
+  margin: 0 0 .8em;
+  line-height: 1.65;
+}
+.page__content [id="-talks-and-seminars"] ~ ul li::before {
+  width: 5px;
+  height: 5px;
+  top: .6em;
+  left: -1.5em;
+  border-radius: 50%;
+  background: var(--accent);
+  transform: translateX(-50%);
+  opacity: .75;
+}
+.page__content [id="-talks-and-seminars"] ~ ul li > em:first-child {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--ink);
+}
+/* talk title, set in the display serif like a project title */
+.page__content [id="-talks-and-seminars"] ~ ul li strong {
+  font-size: 1.16em;
+  font-weight: 500;
+  color: var(--ink);
+}
+/* a linked title keeps the title colour; the underline marks it as a link
+   (here the <a> wraps the <strong>, the reverse of the project titles) */
+.page__content [id="-talks-and-seminars"] ~ ul li a strong { color: var(--ink); }
+
+/* --- sidebar ------------------------------------------------------------- */
+
+.author__avatar img {
+  box-shadow: 0 2px 14px rgba(27, 27, 25, .14);
+}
+/* a larger portrait on desktop, where the sidebar has the room */
+@media (min-width: 1024px) {
+  .author__avatar img { max-width: 215px; }
+}
+.author__name {
+  font-size: 1.5em;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -.02em;
+  color: var(--ink);
+}
+.author__bio {
+  color: var(--ink-mute);
+  line-height: 1.5;
+}
+.author__urls li { margin-bottom: .25em; }
+
+/* --- masthead (already sticky in the theme) ------------------------------ */
+
+.masthead {
+  background: rgba(252, 251, 249, .9);
+  backdrop-filter: saturate(140%) blur(12px);
+  -webkit-backdrop-filter: saturate(140%) blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+</style>
+<script>window.addEventListener("load",function(){
+ var hs=[].slice.call(document.querySelectorAll(".page__content h1")).filter(function(e){return !e.classList.contains("hero__name");});
+ var a=["-educations","-internships","-research-projects","-talks-and-seminars"];
+ hs.forEach(function(e,i){e.id=a[i]||"";});
+ var b=["vision-language-interpretability--embodied-perception","real-time-neural-control-systems","signal-decoding-foundations"];
+ [].slice.call(document.querySelectorAll(".page__content h2")).forEach(function(e,i){e.id=b[i]||"";});
+ var sb=document.querySelector(".sidebar"); if(sb) sb.remove();
+ var nav=document.querySelector(".visible-links");
+ if(nav){var t=["Homepage","About Me","Educations","Internships","Research Projects","Talks and Seminars"];
+  [].slice.call(nav.querySelectorAll("a")).forEach(function(a2,i){if(t[i])a2.textContent=t[i];});}
+});</script>
+</head>
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+<link rel="manifest" href="images/site.webmanifest">
+
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-TileImage" content="images/mstile-144x144.png?v=M44lzPylqQ">
+<meta name="msapplication-config" content="images/browserconfig.xml?v=M44lzPylqQ">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="assets/css/academicons.css"/>
+
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <button><div class="navicon"></div></button>
+        <ul class="visible-links">
+          <li class="masthead__menu-item masthead__menu-item--lg masthead__menu-home-item"><a href="#about-me">Homepage</a></li>
+          
+            <li class="masthead__menu-item"><a href="/#about-me">About Me</a></li>
+          
+            <li class="masthead__menu-item"><a href="/#-research-projects">Research Projects</a></li>
+          
+            <li class="masthead__menu-item"><a href="/#-educations">Educations</a></li>
+          
+            <li class="masthead__menu-item"><a href="/#-talks-and-seminars">Talks and Seminars</a></li>
+          
+            <li class="masthead__menu-item"><a href="/#-internships">Internships</a></li>
+          
+        </ul>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    <div id="main" role="main">
+      
+  <div class="sidebar sticky">
+  
+
+<div itemscope itemtype="http://schema.org/Person" class="profile_box">
+
+  <div class="author__avatar">
+    <img src="images/profile.jpg" class="author__avatar" alt="Xinyu (Catherine) Tian">
+  </div>
+
+  <div class="author__content">
+    <h3 class="author__name">Xinyu (Catherine) Tian</h3>
+    <p class="author__bio">Tsinghua University · Visiting Student at UC San Diego</p>
+  </div>
+
+  <div class="author__urls-wrapper">
+    <!-- <button class="btn btn--inverse">More Info & Contact</button> -->
+    <ul class="author__urls social-icons">
+      
+        <li><div style="white-space: normal; margin-bottom: 1em;">Homepage of Xinyu (Catherine) Tian — senior undergraduate at Tsinghua University, visiting student at UC San Diego. Human data for embodied intelligence and robot learning.</div></li>
+      
+      
+        <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> San Diego, CA</li>
+      
+      
+      
+      
+        <li><a href="mailto:xit026@ucsd.edu"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> Email</a></li>
+      
+      
+       
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </ul>
+      <div class="author__urls_sm">
+      
+      
+        <a href="mailto:xit026@ucsd.edu"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i></a>
+      
+      
+       
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+  </div>
+</div>
+
+  
+  </div>
+
+    
+      <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+        <meta itemprop="headline" content="">
+        <div class="page__inner-wrap">
+          <section class="page__content" itemprop="text"><p><span class='anchor' id='about-me'></span></p>
+<div class="hero">
+  <div class="hero__side">
+    <p class="hero__eyebrow">Human Data for Robot Learning</p>
+    <h1 class="hero__name">Xinyu (Catherine) Tian</h1>
+    <img class="hero__portrait" src="images/profile.jpg" alt="Xinyu (Catherine) Tian">
+    <p class="hero__meta">San Diego, CA &middot; <a href="mailto:xit026@ucsd.edu">xit026@ucsd.edu</a></p>
+  </div>
+  <div class="hero__bio">
+    <p>I am a senior undergraduate from <a href="https://www.tsinghua.edu.cn/en/">Tsinghua University</a>, <a href="https://www.zlc.tsinghua.edu.cn/EN/en.htm">Zhili College</a>. Currently I'm a visiting student at <a href="https://ucsd.edu/">UCSD</a>. Prior to this, I worked as a research intern under Xiaorong Gao and Bo Hong on non-invasive and invasive <strong>brain-computer interfaces</strong>.</p>
+    <p>I also spent a happy spring as a research intern at <a href="https://www.kch.nhs.uk/">King's College Hospital</a> supervised by Antonio Valent&iacute;n in 2026. My research interest has since shifted from <strong>decoding biological intelligence</strong> to <strong>encoding artificial embodied intelligence</strong>.</p>
+    <p>Currently I'm curious about the potential of using <strong>human data</strong> as a training signal in robot learning.</p>
+    <p class="hero__q">Is the ideal robotic system supposed to be humanoid (either in embodiment or in intelligence), or has its own trajectory of development and evolution?</p>
+  </div>
+</div>
+
+<h1>📖 Educations</h1>
+<ul>
+<li><em>2023.09 – 2027.06 (expected)</em>, B.S., <a href="https://www.zlc.tsinghua.edu.cn/EN/en.htm">Zhili College</a>, <a href="https://www.tsinghua.edu.cn/en/">Tsinghua University</a>, Beijing — Advisors: Prof. Xiaorong Gao and Prof. Bo Hong</li>
+<li>Visiting Student, <a href="https://ucsd.edu/">University of California San Diego</a></li>
+</ul>
+<h1>💻 Internships</h1>
+<ul>
+<li><em>2026.01.11 – 2026.03.11</em>, Research Intern, Antonio Valentín's Lab (neuromodulation in epilepsy), <a href="https://www.kch.nhs.uk/">King's College Hospital</a>, London, UK</li>
+</ul>
+<h1>🔬 Research Projects</h1>
+<h2>Vision-Language Interpretability &amp; Embodied Perception</h2>
+<p><strong>Causal Gaze-Attention Alignment in Vision-Language Models</strong> · UC San Diego, 2026</p>
+<ul>
+<li>Applied activation patching to <a href="https://llava-vl.github.io/">LLaVA</a> and <a href="https://github.com/QwenLM/Qwen2-VL">Qwen2-VL</a> to test whether human gaze fixation causally predicts model attention allocation and failure modes</li>
+<li>Drew ground-truth fixations from the <a href="https://aclanthology.org/2021.conll-1.3/">VQA-MHUG</a> eye-tracking corpus</li>
+<li>Gaze-peak-targeted ablation shows a preliminary effect (<em>p</em> &lt; 0.01, N = 120); result currently under further powering</li>
+<li>Implemented in <a href="https://github.com/TransformerLensOrg/TransformerLens">TransformerLens</a>, with methodology grounded in the <a href="https://www.arena.education/">ARENA 3.0</a> mechanistic-interpretability curriculum</li>
+</ul>
+<p><strong>Spatially-Grounded Gaze &amp; Scene Pipeline — <a href="https://www.projectaria.com/">Meta Aria Glasses</a></strong> · UC San Diego, 2026</p>
+<ul>
+<li>Fused egocentric RGB, depth, and calibrated gaze-ray streams into a spatially-registered perception pipeline</li>
+<li><a href="https://ai.meta.com/sam2/">SAM 2</a> segmentation with VLM object recognition for semantically-grounded, object-level gaze tokenization</li>
+<li>I-DT fixation detection and scanpath-graph construction from raw gaze traces, at both fine and coarse granularity</li>
+<li>Toward an attention foundation model and, from it, agents that allocate perceptual resources to task-relevant information</li>
+</ul>
+<h2>Real-Time Neural Control Systems</h2>
+<p><strong>EBR (Enhancing, Boosting and Repairing): A Paralysis Rehabilitation System Based on Minimally Invasive BCI</strong> · Tsinghua, Hong Lab, 2025.08 – present<br />
+<em>Key project funded by the Tsinghua Innovative Research Commission — an upgrade of NEO, China's first wireless invasive BCI clinical trial</em></p>
+<ul>
+<li><strong>Leader of group R</strong>: architected a CV-based dual-camera pipeline automating the Action Research Arm Test (ARAT), using binocular stereo vision and CAD-based 6D pose estimation</li>
+<li><strong>Key member of group B</strong>: proposed a tensor-decomposition method for dimensionality reduction in motor-imagery decoding, and assisted ECoG signal collection from patients</li>
+</ul>
+<p><strong>AR Wheelchair Navigation Using Text-Based SSVEP-BCI</strong> · Tsinghua, Gao Lab, 2025.06 – 2025.09</p>
+<ul>
+<li>Decoded 7 directional intentions (forward, backward, left, right, clockwise and counter-clockwise rotation, stop) at 0.5 s intervals via calibrated TDCA</li>
+<li>Traded decoding accuracy against user comfort by presenting text-coded stimuli through an immersive AR headset</li>
+<li>Handled system debugging and report writing for the World Robot Contest</li>
+</ul>
+<h2>Signal Decoding Foundations</h2>
+<p><strong>An SSVEP-BCI System Using Low-Depth Flickering Stimuli</strong> · Tsinghua, Gao Lab, 2025.10 – 2026.01 · <em>independent research</em></p>
+<ul>
+<li>Replaced conventional high-depth brightness flicker with medium- and low-depth flicker to reduce flickering sensation without compromising decoding performance</li>
+<li>Processed EEG from 10 subjects to extract temporal, spatial and spectral response characteristics across stimulus frequency and luminance</li>
+<li>Compared FBCCA, TDCA and TRCA on both accuracy and runtime to validate the system</li>
+</ul>
+<p><strong>A Text-Based SSVEP-BCI Speller: 3-Level Hierarchical Encoding on Chinese Linguistic Units</strong> · Tsinghua, Gao Lab, 2025.02 – 2025.07</p>
+<ul>
+<li>Encoded at three levels of Chinese linguistic structure — <em>zi</em> (character), <em>ci</em> (word) and <em>chengyu</em> (phrase) — to improve decoding robustness</li>
+<li>Substituted text-based flickering stimuli for brightness flicker to improve user comfort</li>
+<li>Collected and processed EEG from 10 subjects in frequency-sweeping experiments</li>
+<li>Validated the hierarchical encoding by showing involvement of both ventral and dorsal visual pathways, with distinct response patterns per level</li>
+</ul>
+<p><strong>Automatic Detection of SPES Artifacts in ECoG for SOZ Identification</strong> · King's College London, 2026.01 – 2026.03</p>
+<ul>
+<li>Built a clinical-assistant plugin for <a href="https://eeglab.org/">EEGLAB</a> in MATLAB, designed as human-in-the-loop tooling that speeds clinicians up rather than replacing their judgement</li>
+<li>Worked with standardized but noisy clinical data, in direct communication with the people collecting it</li>
+</ul>
+<h1>💬 Talks and Seminars</h1>
+<ul>
+<li><em>2026.06.03</em>, [Journal Club] <a href="https://www.nature.com/articles/s41562-025-02297-0"><strong>Active Use of Latent Tree-Structured Sentence Representation in Humans and Large Language Models</strong></a>, Gao Lab Meeting</li>
+<li><em>2025.11.22</em>, [Journal Club] <a href="https://openreview.net/forum?id=bcTjW5kS4W"><strong>NetFormer: An Interpretable Model for Recovering Dynamical Connectivity in Neuronal Population Dynamics</strong></a>, Hong Lab Meeting</li>
+<li><em>2025.10.18</em>, [Symposium] <strong>Dream Engineering: From Targeted Memory Reactivation to Visual Reconstruction</strong>, Tsinghua Academy Elite Scholars Program</li>
+<li><em>2025.08.23</em>, [Journal Club] <strong>From Psychoacoustic Category Boundaries to Cortical Feature-Tuned Ensembles: Edward Chang's Research on Speech Perception</strong>, Hong Lab Meeting</li>
+<li><em>2025.03.21</em>, [Symposium] <strong>Boolean Network Models: Toward Interpretable and Robust Biomodeling</strong> (with Zezhao Wu), Tsinghua Academy Elite Scholars Program</li>
+</ul></section>
+        </div>
+      </article>
+    </div>
+
+    <script src="assets/js/main.min.js"></script>
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', "");
+</script>
+
+
+
+
+  
+<style>
+#tuner{position:fixed;top:64px;right:16px;z-index:9999;width:258px;background:#fff;
+ border:1px solid #d8d4cc;border-radius:8px;box-shadow:0 6px 26px rgba(0,0,0,.16);
+ font:12px/1.35 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#1b1b19}
+#tuner h4{margin:0;padding:9px 11px;border-bottom:1px solid #eee;font-size:11px;
+ letter-spacing:.1em;text-transform:uppercase;color:#3f5f7f;cursor:move;user-select:none}
+#tuner .body{padding:9px 11px 11px;max-height:70vh;overflow:auto}
+#tuner label{display:block;margin:0 0 8px}
+#tuner .row{display:flex;justify-content:space-between;margin-bottom:2px}
+#tuner .nm{color:#555}
+#tuner .val{font-variant-numeric:tabular-nums;font-weight:600}
+#tuner input[type=range]{width:100%;margin:0}
+#tuner button{padding:6px 8px;font-size:11px;border:1px solid #d8d4cc;background:#faf9f7;
+ border-radius:5px;cursor:pointer}
+#tuner button:hover{background:#f0eee9}
+#tuner .btns{display:flex;gap:6px;margin-top:4px}
+#tuner .btns button{flex:1}
+#tuner textarea{width:100%;height:104px;margin-top:8px;font:11px/1.4 ui-monospace,Menlo,monospace;
+ border:1px solid #e6e3dd;border-radius:5px;padding:6px;background:#fbfaf8}
+#tuner.min .body{display:none}
+
+.dragh{position:fixed;z-index:9998;background:rgba(63,95,127,0);transition:background .12s}
+.dragh:hover,.dragh.on{background:rgba(63,95,127,.35)}
+.dragh.vert{width:9px;cursor:col-resize}
+.dragh.corner{width:16px;height:16px;cursor:nwse-resize;border:2px solid rgba(63,95,127,.5);
+ background:#fff;border-radius:3px}
+.draglbl{position:fixed;z-index:9999;font:10px/1 -apple-system,sans-serif;color:#3f5f7f;background:#fff;
+ border:1px solid #d8d4cc;border-radius:3px;padding:2px 4px;pointer-events:none;opacity:0;white-space:nowrap}
+.draglbl.show{opacity:1}
+
+.modchip{position:fixed;z-index:9997;display:none;align-items:center;gap:5px;
+ font:11px/1 -apple-system,sans-serif;color:#3f5f7f;background:#fff;border:1px solid #cfd8e2;
+ border-radius:5px;padding:4px 7px;cursor:grab;box-shadow:0 2px 8px rgba(0,0,0,.1);user-select:none}
+.modchip:active{cursor:grabbing}
+body.modmode .modchip{display:inline-flex}
+body.modmode .modzone{outline:1px dashed rgba(63,95,127,.3);outline-offset:6px}
+#modline{position:fixed;z-index:9999;height:3px;background:#3f5f7f;border-radius:2px;display:none}
+#modorder{margin-top:8px;font:11px/1.5 ui-monospace,Menlo,monospace;color:#555;
+ border-top:1px solid #eee;padding-top:6px}
+</style>
+
+<div id="tuner">
+  <h4 id="tuner-drag">Layout tuner &mdash; drag to adjust</h4>
+  <div class="body">
+    <div id="tuner-fields"></div>
+    <div class="btns"><button id="tuner-reset">Reset</button><button id="tuner-copy">Copy CSS</button></div>
+    <textarea id="tuner-out" readonly></textarea>
+    <button id="modtoggle" style="width:100%;margin-top:8px">Move modules: off</button>
+    <div id="modorder"></div>
+  </div>
+</div>
+<div class="draglbl" id="draglbl"></div>
+<div id="modline"></div>
+
+<script>
+(function(){
+ var root=document.documentElement, content=document.querySelector('.page__content');
+ if(!content) return;
+ function q(s){return document.querySelector(s);}
+ function fpx(el){return parseFloat(getComputedStyle(el).fontSize);}
+
+ /* ================= 1. variable sliders ================= */
+ var F=[
+  {v:'--content-w', n:'content width', min:34, max:92, step:.5, unit:'em'},
+  {v:'--body-size', n:'body size',     min:.95,max:1.9, step:.01,unit:'em'},
+  {v:'--line-h',    n:'line height',   min:1.2,max:2.2, step:.01,unit:''},
+  {v:'--side-w',    n:'left column',   min:10, max:44,  step:.5, unit:'em'},
+  {v:'--gap',       n:'column gap',    min:.2, max:8,   step:.1, unit:'em'},
+  {v:'--sec-gap',   n:'section gap',   min:.2, max:3,   step:.05,unit:'em'}
+ ];
+ var cs=getComputedStyle(root), box=q('#tuner-fields'), init={};
+ F.forEach(function(f){
+  init[f.v]=parseFloat(cs.getPropertyValue(f.v));
+  var l=document.createElement('label');
+  l.innerHTML='<span class="row"><span class="nm">'+f.n+'</span><span class="val" id="v'+f.v+'"></span></span>';
+  var i=document.createElement('input');
+  i.type='range'; i.min=f.min; i.max=f.max; i.step=f.step; i.value=init[f.v];
+  i.oninput=function(){setVar(f,i.value);};
+  l.appendChild(i); box.appendChild(l); f.input=i;
+ });
+ function setVar(f,val){
+  root.style.setProperty(f.v,val+f.unit);
+  q('#v'+f.v).textContent=val+f.unit; varsOut(); placeAll();
+ }
+ function varsOut(){
+  q('#tuner-out').value=F.map(function(f){return '  '+f.v+': '+f.input.value+f.unit+';';}).join('\n');
+ }
+ function syncVars(){
+  F.forEach(function(f){
+   var c=parseFloat(getComputedStyle(root).getPropertyValue(f.v));
+   if(!isNaN(c)){f.input.value=c; q('#v'+f.v).textContent=c+f.unit;}
+  });
+  varsOut();
+ }
+ F.forEach(function(f){setVar(f,f.input.value);});
+ q('#tuner-reset').onclick=function(){F.forEach(function(f){f.input.value=init[f.v];setVar(f,init[f.v]);});};
+ q('#tuner-copy').onclick=function(){var t=q('#tuner-out');t.select();try{document.execCommand('copy');}catch(e){}};
+ var hd=q('#tuner-drag'), pnl=q('#tuner'), dx,dy,dragging=false;
+ hd.onmousedown=function(e){dragging=true;dx=e.clientX-pnl.offsetLeft;dy=e.clientY-pnl.offsetTop;e.preventDefault();};
+ document.addEventListener('mousemove',function(e){if(!dragging)return;
+  pnl.style.left=(e.clientX-dx)+'px';pnl.style.top=(e.clientY-dy)+'px';pnl.style.right='auto';});
+ document.addEventListener('mouseup',function(){dragging=false;});
+ hd.ondblclick=function(){pnl.classList.toggle('min');};
+
+ /* ================= 2. section tagging: styling survives reordering ======== */
+ (function tag(){
+  var cur=null;
+  [].slice.call(content.children).forEach(function(el){
+   if(el.classList&&el.classList.contains('hero')){cur=null;return;}
+   if(el.tagName==='H1'){cur=/research/i.test(el.id)?'proj':'time';return;}
+   if(!cur)return;
+   if(el.tagName==='UL') el.classList.add(cur==='proj'?'x-projul':'x-timeline');
+   if(el.tagName==='P'&&cur==='proj') el.classList.add('x-projp');
+   if(el.tagName==='H2') el.classList.add('x-projh2');
+  });
+  var st=document.createElement('style');
+  st.textContent=[
+   '.page__content ul.x-timeline{margin:.9em 0 0;padding-left:1.5em;border:0;border-left:1px solid var(--line);list-style:none;background:none;border-radius:0;box-shadow:none}',
+   '.page__content ul.x-timeline li{position:relative;margin:0 0 .8em;line-height:1.65}',
+   '.page__content ul.x-timeline li::before{content:"";position:absolute;left:-1.5em;top:.6em;width:5px;height:5px;border-radius:50%;background:var(--accent);transform:translateX(-50%);opacity:.75}',
+   '.page__content ul.x-timeline li>em:first-child{font-style:normal;font-weight:600;color:var(--ink)}',
+   '.page__content ul.x-projul{margin:.6em 0 0;padding-left:1.1em;border:0;list-style:none;background:none;box-shadow:none}',
+   '.page__content ul.x-projul li{position:relative;margin:.25em 0;line-height:1.6}',
+   '.page__content ul.x-projul li::before{content:"";position:absolute;left:-1.1em;top:.72em;width:5px;height:1px;border-radius:0;background:var(--ink-mute);transform:none;opacity:.7}',
+   '.page__content ul.x-projul li>em:first-child{font-style:italic;font-weight:400;color:inherit}',
+   '.page__content p.x-projp{margin:2.2em 0 .1em;padding-top:1.3em;border-top:1px solid var(--line);font-size:.82em;line-height:1.5;color:var(--ink-mute)}',
+   '.page__content h2.x-projh2+p.x-projp{margin-top:0;padding-top:0;border-top:0}'
+  ].join('\n');
+  document.head.appendChild(st);
+ })();
+
+ /* ================= 3. edge handles ================= */
+ var lbl=q('#draglbl');
+ var H=[
+  {varn:'--side-w', unit:'em', cls:'vert', dir:1, ref:function(){return q('.hero__side');},
+   at:function(){var r=q('.hero__side').getBoundingClientRect(),h=q('.hero').getBoundingClientRect();
+    return {left:r.right-4,top:h.top,height:h.height};}},
+  {varn:'--gap', unit:'em', cls:'vert', dir:-1, ref:function(){return q('.hero');},
+   at:function(){var r=q('.hero__bio').getBoundingClientRect(),h=q('.hero').getBoundingClientRect();
+    return {left:r.left-4,top:h.top,height:h.height};}},
+  {varn:'--content-w', unit:'em', cls:'vert', dir:1, ref:function(){return content;},
+   at:function(){var r=content.getBoundingClientRect();
+    return {left:r.right-4,top:Math.max(r.top,60),height:Math.min(r.height,window.innerHeight-120)};}},
+  {varn:'--side-w', unit:'em', cls:'corner', dir:1, ref:function(){return q('.hero__side');},
+   at:function(){var r=q('.hero__portrait').getBoundingClientRect();return {left:r.right-8,top:r.bottom-8};}}
+ ];
+ H.forEach(function(h){
+  var el=document.createElement('div'); el.className='dragh '+h.cls; el.title='drag '+h.varn;
+  document.body.appendChild(el); h.el=el;
+  el.addEventListener('mousedown',function(e){
+   e.preventDefault(); el.classList.add('on'); lbl.classList.add('show');
+   var sx=e.clientX, unit=h.unit==='px'?1:fpx(h.ref());
+   var start=parseFloat(getComputedStyle(root).getPropertyValue(h.varn));
+   function mv(ev){
+    var d=(ev.clientX-sx)*h.dir/unit, v=Math.max(h.unit==='px'?80:2,start+d);
+    v=h.unit==='px'?Math.round(v):Math.round(v*10)/10;
+    root.style.setProperty(h.varn,v+h.unit);
+    lbl.textContent=h.varn+': '+v+h.unit;
+    lbl.style.left=(ev.clientX+12)+'px'; lbl.style.top=(ev.clientY-10)+'px';
+    placeAll(); syncVars();
+   }
+   function up(){document.removeEventListener('mousemove',mv);document.removeEventListener('mouseup',up);
+    el.classList.remove('on'); lbl.classList.remove('show');}
+   document.addEventListener('mousemove',mv); document.addEventListener('mouseup',up);
+  });
+ });
+
+ /* ================= 4. whole-module reordering ================= */
+ var line=q('#modline');
+ function scan(){
+  var out=[], cur=null;
+  [].slice.call(content.children).forEach(function(el){
+   if(el.classList&&el.classList.contains('hero')){out.push({label:'Hero',els:[el]});cur=null;}
+   else if(el.tagName==='H1'){cur={label:el.textContent.trim(),els:[el]};out.push(cur);}
+   else if(cur){cur.els.push(el);}
+  });
+  return out;
+ }
+ var mods=scan();
+ mods.forEach(function(m){
+  var c=document.createElement('div'); c.className='modchip';
+  c.innerHTML='&#9776; <b>'+m.label.replace(/[^\x20-\x7E]/g,'').trim()+'</b>';
+  document.body.appendChild(c); m.chip=c;
+  m.els.forEach(function(e){e.classList.add('modzone');});
+  c.addEventListener('mousedown',function(e){
+   e.preventDefault();
+   function mv(ev){
+    var t=pick(ev.clientY); if(!t) return;
+    line.style.display='block';
+    line.style.left=t.rect.left+'px'; line.style.width=t.rect.width+'px';
+    line.style.top=(t.before?t.rect.top-2:t.rect.bottom+2)+'px';
+    m._drop=t;
+   }
+   function up(){
+    document.removeEventListener('mousemove',mv); document.removeEventListener('mouseup',up);
+    line.style.display='none';
+    if(m._drop){move(m,m._drop); m._drop=null;}
+   }
+   document.addEventListener('mousemove',mv); document.addEventListener('mouseup',up);
+  });
+ });
+ function rectOf(m){
+  var a=m.els[0].getBoundingClientRect(), b=m.els[m.els.length-1].getBoundingClientRect();
+  return {left:a.left,width:a.width,top:a.top,bottom:b.bottom};
+ }
+ function pick(y){
+  var best=null;
+  mods.forEach(function(m){
+   var r=rectOf(m), mid=(r.top+r.bottom)/2, d=Math.abs(y-mid);
+   if(!best||d<best.d) best={d:d,mod:m,rect:r,before:y<mid};
+  });
+  return best;
+ }
+ function move(m,t){
+  if(m===t.mod) return;
+  var anchor=t.before?t.mod.els[0]:t.mod.els[t.mod.els.length-1].nextSibling;
+  m.els.forEach(function(el){content.insertBefore(el,anchor);});
+  report();
+ }
+ q('#modtoggle').onclick=function(){
+  document.body.classList.toggle('modmode');
+  var on=document.body.classList.contains('modmode');
+  this.textContent='Move modules: '+(on?'ON — drag the chips':'off');
+  placeAll();
+ };
+ function report(){
+  q('#modorder').textContent='order: '+scan().map(function(m){
+   return m.label.replace(/[^\x20-\x7E]/g,'').trim();}).join(' > ');
+  placeAll();
+ }
+ function placeAll(){
+  if(!H) return;   /* H is defined after the sliders, which call this first */
+  H.forEach(function(h){ if(!h.ref())return; var a=h.at();
+   h.el.style.left=a.left+'px'; h.el.style.top=a.top+'px'; if(a.height) h.el.style.height=a.height+'px';});
+  if(typeof mods!=='undefined') mods.forEach(function(m){
+   var r=rectOf(m); m.chip.style.left=r.left+'px'; m.chip.style.top=(r.top-9)+'px';});
+ }
+ report(); placeAll();
+ window.addEventListener('scroll',placeAll,{passive:true});
+ window.addEventListener('resize',placeAll);
+ setInterval(placeAll,500);
+})();
+</script>
+
+</body>
+</html>

@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "Xinyu (Catherine) Tian"
-description              : "Homepage of Xinyu (Catherine) Tian — senior undergraduate at Tsinghua University, visiting student at UC San Diego. Human data for embodied intelligence and robot learning."
+description              : "Human Data for Robot Learning"   # also shown in the sidebar under the name
 repository               : "bci-plumber/bci-plumber.github.io"
 
 # google analytics
