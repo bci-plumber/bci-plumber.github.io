@@ -16,7 +16,7 @@ redirect_from:
     <p class="hero__eyebrow">Human Data for Robot Learning</p>
     <h1 class="hero__name">Xinyu (Catherine) Tian</h1>
     <img class="hero__portrait" src="images/profile.jpg" alt="Xinyu (Catherine) Tian">
-    <p class="hero__meta">San Diego, CA &middot; <a href="mailto:xit026@ucsd.edu">xit026@ucsd.edu</a></p>
+    <p class="hero__meta">San Diego, CA &middot; <a href="mailto:xit026@ucsd.edu">xit026@ucsd.edu</a> &middot; <a href="files/CV_Xinyu_Tian.pdf">CV (PDF)</a></p>
   </div>
   <div class="hero__bio">
     <p>I am a senior undergraduate from <a href="https://www.tsinghua.edu.cn/en/">Tsinghua University</a>, <a href="https://www.zlc.tsinghua.edu.cn/EN/en.htm">Zhili College</a>. Currently I'm a visiting student at <a href="https://ucsd.edu/">UCSD</a>. Prior to this, I worked as a research intern under Xiaorong Gao and Bo Hong on non-invasive and invasive <strong>brain-computer interfaces</strong>.</p>
