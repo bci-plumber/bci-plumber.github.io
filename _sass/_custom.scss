@@ -393,3 +393,22 @@ body {
   -webkit-backdrop-filter: saturate(140%) blur(12px);
   border-bottom: 1px solid var(--line);
 }
+
+/* --- site credit -----------------------------------------------------------
+   Sits after the research heading, so `[id="-research-projects"] ~ p` would
+   otherwise style it as a project title. `p.site-credit` matches that
+   specificity and comes later, so it wins. */
+.page__content p.site-credit {
+  margin: 3.2em 0 0;
+  padding-top: 1em;
+  border-top: 1px solid var(--line);
+  font-size: .82em;
+  line-height: 1.5;
+  color: var(--ink-mute);
+}
+.page__content p.site-credit a { color: var(--ink-mute); }
+.page__content p.site-credit a:hover { color: var(--accent); }
+
+/* breathing room under the last line of the page */
+#main .page__content { padding-bottom: 4.5em; }
+

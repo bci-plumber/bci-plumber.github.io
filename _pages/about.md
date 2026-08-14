@@ -76,3 +76,5 @@ redirect_from:
 - *2025.10.18*, \[Symposium\] **Dream Engineering: From Targeted Memory Reactivation to Visual Reconstruction**, Tsinghua Academy Elite Scholars Program
 - *2025.08.23*, \[Journal Club\] **From Psychoacoustic Category Boundaries to Cortical Feature-Tuned Ensembles: Edward Chang's Research on Speech Perception**, Hong Lab Meeting
 - *2025.03.21*, \[Symposium\] **Boolean Network Models: Toward Interpretable and Robust Biomodeling** (with Zezhao Wu), Tsinghua Academy Elite Scholars Program
+
+<p class="site-credit">Built with the <a href="https://github.com/RayeRen/acad-homepage.github.io">AcadHomepage</a> template by Yi Ren (RayeRen), used under the MIT License.</p>
