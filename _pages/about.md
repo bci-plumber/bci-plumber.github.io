@@ -37,48 +37,37 @@ redirect_from:
 
 # 🔬 Research Projects
 
-## Vision-Language Interpretability & Embodied Perception
+## Vision–Language Model Interpretability
 
-**Causal Gaze-Attention Alignment in Vision-Language Models** · UC San Diego, 2026
-- Applied activation patching to [LLaVA](https://llava-vl.github.io/) and [Qwen2-VL](https://github.com/QwenLM/Qwen2-VL) to test whether human gaze fixation causally predicts model attention allocation and failure modes
-- Drew ground-truth fixations from the [VQA-MHUG](https://aclanthology.org/2021.conll-1.3/) eye-tracking corpus
-- Gaze-peak-targeted ablation shows a preliminary effect (*p* < 0.01, N = 120); result currently under further powering
-- Implemented in [TransformerLens](https://github.com/TransformerLensOrg/TransformerLens), with methodology grounded in the [ARENA 3.0](https://www.arena.education/) mechanistic-interpretability curriculum
+**Causal Alignment of Human Gaze and Vision–Language Model Attention** · UC San Diego · 2026 · *group leader*
+- Tested whether human fixation causally drives model attention in [LLaVA](https://llava-vl.github.io/) and [Qwen2-VL](https://github.com/QwenLM/Qwen2-VL), patching activations at gaze-peak tokens against ground-truth fixations from the [VQA-MHUG](https://aclanthology.org/2021.conll-1.3/) corpus
+- Ablating gaze-peak tokens produced a significantly larger effect than matched random ablation (preliminary; *p* < 0.01, N = 120); the result is being re-run at higher power
+- Implemented in [TransformerLens](https://github.com/TransformerLensOrg/TransformerLens), following the [ARENA 3.0](https://www.arena.education/) mechanistic-interpretability methodology
 
-**Spatially-Grounded Gaze & Scene Pipeline — [Meta Aria Glasses](https://www.projectaria.com/)** · UC San Diego, 2026
-- Fused egocentric RGB, depth, and calibrated gaze-ray streams into a spatially-registered perception pipeline
-- [SAM 2](https://ai.meta.com/sam2/) segmentation with VLM object recognition for semantically-grounded, object-level gaze tokenization
-- I-DT fixation detection and scanpath-graph construction from raw gaze traces, at both fine and coarse granularity
-- Toward an attention foundation model and, from it, agents that allocate perceptual resources to task-relevant information
+## Brain–Computer Interfaces for Real-Time Control
 
-## Real-Time Neural Control Systems
+**Low-Fatigue Stimulus Design for SSVEP Spellers** · Tsinghua University, Gao Lab · 2025.02 – 2026.01 · *group leader*
+- Replaced high-depth brightness flicker with low-depth and text-based stimuli, targeting the flicker sensation that limits how long a speller can be used rather than its peak accuracy
+- Encoded three levels of Chinese linguistic structure — *zi* (character), *ci* (word) and *chengyu* (phrase) — to improve decoding robustness across units of different length
+- Benchmarked FBCCA, TDCA and TRCA on accuracy and runtime across EEG from ten subjects; the low-depth study was conducted independently
 
-**EBR (Enhancing, Boosting and Repairing): A Paralysis Rehabilitation System Based on Minimally Invasive BCI** · Tsinghua, Hong Lab, 2025.08 – present  
-*Key project funded by the Tsinghua Innovative Research Commission — an upgrade of NEO, China's first wireless invasive BCI clinical trial*
-- **Leader of group R**: architected a CV-based dual-camera pipeline automating the Action Research Arm Test (ARAT), using binocular stereo vision and CAD-based 6D pose estimation
-- **Key member of group B**: proposed a tensor-decomposition method for dimensionality reduction in motor-imagery decoding, and assisted ECoG signal collection from patients
+**Real-Time Wheelchair Navigation via a Text-Based SSVEP Interface** · Tsinghua University, Gao Lab · 2025.06 – 2025.09 · *group member*
+- Built a closed-loop interface issuing seven directional commands — forward, back, left, right, two rotations and stop — at 0.5 s decision intervals using calibrated TDCA
+- Presented text-coded stimuli through an AR headset, trading peak decoding accuracy for stimuli a user can tolerate across a full session
+- Validated and debugged the deployed system for the World Robot Contest
 
-**AR Wheelchair Navigation Using Text-Based SSVEP-BCI** · Tsinghua, Gao Lab, 2025.06 – 2025.09
-- Decoded 7 directional intentions (forward, backward, left, right, clockwise and counter-clockwise rotation, stop) at 0.5 s intervals via calibrated TDCA
-- Traded decoding accuracy against user comfort by presenting text-coded stimuli through an immersive AR headset
-- Handled system debugging and report writing for the World Robot Contest
+## Computer Vision and Signal Processing for Clinical Assessment
 
-## Signal Decoding Foundations
+**Automatic Detection of SPES Artifacts in ECoG** · King's College London · 2026.01 – 2026.03 · *group leader*
+- Built an [EEGLAB](https://eeglab.org/) plugin that flags single-pulse electrical stimulation artifacts for seizure-onset-zone identification, replacing exhaustive visual inspection with a human-in-the-loop review step
+- Across the five clinical recordings available, tuned detection caught every artifact with under 5% false positives and cut review time by roughly 80% (approximate figures on a small sample)
+- Deliberately rule-based rather than learned, so a clinician can predict and audit its behaviour
 
-**An SSVEP-BCI System Using Low-Depth Flickering Stimuli** · Tsinghua, Gao Lab, 2025.10 – 2026.01 · *independent research*
-- Replaced conventional high-depth brightness flicker with medium- and low-depth flicker to reduce flickering sensation without compromising decoding performance
-- Processed EEG from 10 subjects to extract temporal, spatial and spectral response characteristics across stimulus frequency and luminance
-- Compared FBCCA, TDCA and TRCA on both accuracy and runtime to validate the system
-
-**A Text-Based SSVEP-BCI Speller: 3-Level Hierarchical Encoding on Chinese Linguistic Units** · Tsinghua, Gao Lab, 2025.02 – 2025.07
-- Encoded at three levels of Chinese linguistic structure — *zi* (character), *ci* (word) and *chengyu* (phrase) — to improve decoding robustness
-- Substituted text-based flickering stimuli for brightness flicker to improve user comfort
-- Collected and processed EEG from 10 subjects in frequency-sweeping experiments
-- Validated the hierarchical encoding by showing involvement of both ventral and dorsal visual pathways, with distinct response patterns per level
-
-**Automatic Detection of SPES Artifacts in ECoG for SOZ Identification** · King's College London, 2026.01 – 2026.03
-- Built a clinical-assistant plugin for [EEGLAB](https://eeglab.org/) in MATLAB, designed as human-in-the-loop tooling that speeds clinicians up rather than replacing their judgement
-- Worked with standardized but noisy clinical data, in direct communication with the people collecting it
+**Stereo Vision-Based ARAT Automation as Paralysis Rehabilitation Benchmark** · Tsinghua University, Hong Lab · 2025.08 – present · *group leader*  
+*Part of EBR, a minimally invasive BCI rehabilitation system funded as a key project by the Tsinghua Innovative Research Commission*
+- Designed the system architecture for scoring the Action Research Arm Test from stereo camera video, combining binocular stereo vision with CAD-based 6D pose estimation; implementation is ongoing
+- Proposed tensor decomposition for dimensionality reduction in motor-imagery decoding
+- Supported ECoG data collection from patients
 
 # 💬 Talks and Seminars
 
