@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "Xinyu (Catherine) Tian"
-description              : "Human Data for Robot Learning"   # also shown in the sidebar under the name
+description              : "Does Model Attention Look Where People Look?"   # also shown in the sidebar under the name
 repository               : "bci-plumber/bci-plumber.github.io"
 
 # google analytics

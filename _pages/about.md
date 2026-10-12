@@ -2,7 +2,7 @@
 permalink: /
 title: ""
 excerpt: ""
-description: "Xinyu (Catherine) Tian — senior undergraduate at Tsinghua University, Zhili College, and visiting student at UC San Diego. Human data for embodied intelligence and robot learning."
+description: "Xinyu (Catherine) Tian — senior undergraduate at Tsinghua University, Zhili College, and visiting student at UC San Diego. Does model attention look where people look?"
 author_profile: false
 redirect_from: 
   - /about/
@@ -13,36 +13,40 @@ redirect_from:
 
 <div class="hero">
   <div class="hero__side">
-    <p class="hero__eyebrow">Human Data for Robot Learning</p>
     <h1 class="hero__name">Xinyu (Catherine) Tian</h1>
     <img class="hero__portrait" src="images/profile.jpg" alt="Xinyu (Catherine) Tian">
     <p class="hero__meta">San Diego, CA &middot; <a href="mailto:xit026@ucsd.edu">xit026@ucsd.edu</a> &middot; <a href="files/CV_Xinyu_Tian.pdf">CV (PDF)</a></p>
   </div>
   <div class="hero__bio">
     <p>I am a senior undergraduate from <a href="https://www.tsinghua.edu.cn/en/">Tsinghua University</a>, <a href="https://www.zlc.tsinghua.edu.cn/EN/en.htm">Zhili College</a>. Currently I'm a visiting student at <a href="https://ucsd.edu/">UCSD</a>. Prior to this, I worked as a research intern under Xiaorong Gao and Bo Hong on non-invasive and invasive <strong>brain-computer interfaces</strong>.</p>
-    <p>I also spent a happy spring as a research intern at <a href="https://www.kch.nhs.uk/">King's College Hospital</a> supervised by Antonio Valent&iacute;n in 2026. My research interest has since shifted from <strong>decoding biological intelligence</strong> to <strong>encoding artificial embodied intelligence</strong>.</p>
-    <p>Currently I'm curious about the potential of using <strong>human data</strong> as a training signal in robot learning.</p>
-    <p class="hero__q">Is the ideal robotic system supposed to be humanoid (either in embodiment or in intelligence), or has its own trajectory of development and evolution?</p>
+    <p>I also spent a happy spring as a research intern at <a href="https://www.kch.nhs.uk/">King's College Hospital</a> supervised by Antonio Valent&iacute;n in 2026, working on neuromodulation in epilepsy. Those years were spent reading signals out of <strong>a brain that does not explain itself</strong>; I now work on models that, in principle, <strong>can be opened up and manoeuvred</strong>.</p>
   </div>
 </div>
 
-# 📖 Educations
+# 📝 Publications
 
-- *2023.09 – 2027.06 (expected)*, B.S., [Zhili College](https://www.zlc.tsinghua.edu.cn/EN/en.htm), [Tsinghua University](https://www.tsinghua.edu.cn/en/), Beijing — Advisors: Prof. Xiaorong Gao and Prof. Bo Hong
-- Visiting Student, [University of California San Diego](https://ucsd.edu/)
-
-# 💻 Internships
-
-- *2026.01.11 – 2026.03.11*, Research Intern, Antonio Valentín's Lab (neuromodulation in epilepsy), [King's College Hospital](https://www.kch.nhs.uk/), London, UK
+**GazeAgent: VLM-Guided Implicit Gaze Calibration from Egocentric Multimodal Behavior for AI Glasses**  
+Yuhong Zhang, Khanh An Nguyen, **Xinyu Tian**, Yuchen Xu, KungYi Chang, Abraham Padua, Ying Wu, Gert Cauwenberghs, Tzyy-Ping Jung  
+Under review at ACM CHI
 
 # 🔬 Research Projects
 
-## Vision–Language Model Interpretability
+## Egocentric Gaze and Vision–Language Models
 
 **Causal Alignment of Human Gaze and Vision–Language Model Attention** · UC San Diego · 2026 · *group leader*
 - Tested whether human fixation causally drives model attention in [LLaVA](https://llava-vl.github.io/) and [Qwen2-VL](https://github.com/QwenLM/Qwen2-VL), patching activations at gaze-peak tokens against ground-truth fixations from the [VQA-MHUG](https://aclanthology.org/2021.conll-1.3/) corpus
 - Ablating gaze-peak tokens produced a significantly larger effect than matched random ablation (preliminary; *p* < 0.01, N = 120); the result is being re-run at higher power
 - Implemented in [TransformerLens](https://github.com/TransformerLensOrg/TransformerLens), following the [ARENA 3.0](https://www.arena.education/) mechanistic-interpretability methodology
+
+**Deriving Pseudo-Calibration Targets from Precise Visual Attention** · UC San Diego, Jung Lab · 2026.04 – 2026.09 · *part of GazeAgent (third author)*
+- Benchmarked nine VLMs on validating precise-visual-attention events and localizing their targets from egocentric video, gaze and IMU streams
+- Fine-tuned Qwen3.5-35B-A3B with LoRA on human-consensus labels, raising validation accuracy from 75.0% to 89.5% (Claude Opus 4.6: 81.4%)
+- Designed the recall-oriented multimodal detector and the annotation criteria; five annotators converged to a median 1.93° on targets of median width 13°
+
+**Is Egocentric Gaze Autoregressive? Toward a Gaze Foundation Model** · Independent project (remote) · 2026.04 – 2026.06
+- Built a gaze-tokenization pipeline on Microsoft HoloAssist: projected HoloLens gaze into RGB frames via depth (758k samples, 143 sessions), with five gaze representations and eight tokenizers feeding transformer sequence models
+- Found next-fixation prediction dominated by temporal continuity: the best model beat a persistence baseline by only 3.2%, and instruction text added no gain, suggesting gaze needs external task context rather than autoregression
+- This finding informed the context-driven design of GazeAgent above
 
 ## Brain–Computer Interfaces for Real-Time Control
 
@@ -68,6 +72,15 @@ redirect_from:
 - Designed the system architecture for scoring the Action Research Arm Test from stereo camera video, combining binocular stereo vision with CAD-based 6D pose estimation; implementation is ongoing
 - Proposed tensor decomposition for dimensionality reduction in motor-imagery decoding
 - Supported ECoG data collection from patients
+
+# 📖 Educations
+
+- *2023.09 – 2027.06 (expected)*, B.S., [Zhili College](https://www.zlc.tsinghua.edu.cn/EN/en.htm), [Tsinghua University](https://www.tsinghua.edu.cn/en/), Beijing — Advisors: Prof. Xiaorong Gao and Prof. Bo Hong
+- Visiting Student, [University of California San Diego](https://ucsd.edu/)
+
+# 💻 Internships
+
+- *2026.01.11 – 2026.03.11*, Research Intern, Antonio Valentín's Lab (neuromodulation in epilepsy), [King's College Hospital](https://www.kch.nhs.uk/), London, UK
 
 # 💬 Talks and Seminars
 
