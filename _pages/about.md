@@ -25,9 +25,9 @@ redirect_from:
 
 # 📝 Publications
 
-**GazeAgent: VLM-Guided Implicit Gaze Calibration from Egocentric Multimodal Behavior for AI Glasses**  
-Yuhong Zhang, Khanh An Nguyen, **Xinyu Tian**, Yuchen Xu, KungYi Chang, Abraham Padua, Ying Wu, Gert Cauwenberghs, Tzyy-Ping Jung  
-Under review at ACM CHI
+**[GazeAgent: VLM-Guided Implicit Gaze Calibration from Egocentric Multimodal Behavior for AI Glasses](https://arxiv.org/abs/2610.24364)**  
+Yuhong Zhang, Khanh An Nguyen, **Xinyu Tian**, KungYi Chang, Abraham Padua, Yuchen Xu, Ying Choon Wu, Gert Cauwenberghs, Tzyy-Ping Jung  
+Under review at ACM CHI &middot; [arXiv:2610.24364](https://arxiv.org/abs/2610.24364)
 
 # 🔬 Research Projects
 
